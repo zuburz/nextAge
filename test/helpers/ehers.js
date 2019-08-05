@@ -1,6 +1,9 @@
+var BigNumber = require('bignumber.js');
+export default function ether (a) {
+  
+ var b =web3.utils.toWei(a.toString(), 'ether')
 
-export default function ether (n) {
-  var a =web3.utils.toWei(a, 'ether').toString();
-  console.log("Value of A"+a);
-    return new web3.BigNumber(a.toString());
+ // console.log("Value of A"+a);
+      var a=new BigNumber(b)
+    return a;
   }

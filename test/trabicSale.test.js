@@ -2,7 +2,7 @@ import ether from './helpers/ehers.js';
 const BigNumber = web3.BigNumber;
 const Trabic  = artifacts.require('Trabic')
 const trabicSale = artifacts.require('trabicCrowdSale')
-//const Web3 = require('web3')
+const Web3 = require('web3')
  
 
 require('chai')
@@ -36,10 +36,11 @@ contract('this is the trabic Crowdsale ',function([_,wallet,invester1,invester2]
     })
     describe('this this test of accepting payments',function(){
         it('this is the issue of accepting payments',async function(){
-            const value =ether(1)
+            const value =ether(1);
             const purchaser=invester2;
-            await this.trabicCrowdSale.sendTransaction({value:value,from:invester1}).should.be.fullfiled;
-            await this.trabicCrowdSale.buyToken({value:value,from:invester1}).should.be.fullfiled;
+            
+            await this.trabicCrowdSale.sendTransaction({value:value,from:invester2}).should.be.fulfilled;
+           // await this.trabicCrowdSale.buyToken(invester1,{value:value,from:purchaser}).should.be.fulfilled;
 
         })
     })
