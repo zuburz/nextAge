@@ -2,9 +2,11 @@ import ether from './helpers/ehers.js';
 const BigNumber = web3.BigNumber;
 const Trabic  = artifacts.require('Trabic')
 const trabicSale = artifacts.require('trabicCrowdSale')
+//const Web3 = require('web3')
  
 
 require('chai')
+.use(require('chai-as-promised'))
   .use(require('chai-bignumber')(BigNumber))
   .should();
 contract('this is the trabic Crowdsale ',function([_,wallet,invester1,invester2]){
