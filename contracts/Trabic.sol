@@ -18,7 +18,7 @@ contract Trabic is ERC1404{
     mapping (address => uint256) private blacklist;
 
   constructor(string memory _name, string memory _symbol, uint8 _decimals)
-        ERC20Detailed('trabic','TRC',18)
+        ERC20Detailed(_name,_symbol,_decimals)
         public
     {
 

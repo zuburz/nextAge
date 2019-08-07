@@ -1,12 +1,26 @@
 const contract = require('truffle-contract');
+const Web3 = require('web3');
+const trabic_artifact = require('../build/contracts/Trabic.json');
 
 const metacoin_artifact = require('../build/contracts/MetaCoin.json');
+
+const web3Provider = new Web3.providers.HttpProvider("http://127.0.0.1:8545");
 var MetaCoin = contract(metacoin_artifact);
+var TrabicCoin=contract(trabic_artifact)
 
 module.exports = {
-  lifeIsTest:function(){
-  console.log("hammad zahid");
-  },
+  tokenName:async function(){
+    let token;
+    var self =this;
+   await TrabicCoin.setProvider(self.web3.currentProvider)
+   
+   token=await TrabicCoin.deployed();
+   const testName=await token.symbol();
+  // console.log('this the provider test')
+ // console.log("hammad zahid");
+  
+return testName;
+},
   
   start: function(callback) {
     var self = this;

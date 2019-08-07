@@ -8,7 +8,7 @@ import "../node_modules/openzeppelin-solidity/contracts/access/roles/MinterRole.
 
 
 
-contract ERC1404 is ERC20Mintable, ERC20Pausable, ERC20Detailed,Ownable{
+contract ERC1404 is ERC20Mintable, ERC20Pausable, ERC20Detailed{
   function detectTransferRestriction (address from, address to, uint256 value) public view returns (uint8);
   function messageForTransferRestriction (uint8 restrictionCode) public view returns (string memory message);
 }

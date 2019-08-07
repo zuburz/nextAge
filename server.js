@@ -65,6 +65,12 @@ app.post('/sendCoin', (req, res) => {
     res.send(balance);
   });
 });
+app.get('/getToken',async(req,res)=>{
+  console.log("pre provider")
+  const name=await truffle_connect.lifeIsTest();
+  console.log('post provier')
+  res.send(name);
+});
 
 app.listen(port, () => {
 
